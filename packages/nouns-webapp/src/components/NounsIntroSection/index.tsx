@@ -19,7 +19,8 @@ const NounsIntroSection = () => {
             </h1>
             <p>
               <Trans>
-                For 2+ years we have been doing BluntsDAO (also JointsDAO & SpliffDAO) for free. Now
+              BluntDAO is the the biggest IRL onboarding movement to Web3 via Proof of Sesh through local IRL OGs. We are now introducing the unlimited sesh fund, a regular re-up mechanism where anyone can request ETH to host a sesh from contributors. Onboarding the next million, 1 blunt/sesh at a time.
+                For 2+ years we have been doing BlutnDAO (also JointsDAO & SpliffDAO) for free. Now
                 in year 3: we are on the path to scale: unlimited sesh. A replenishing treasury for
                 holders to vote on global requests for sesh.
               </Trans>
@@ -41,17 +42,7 @@ const NounsIntroSection = () => {
               <Trans>Background</Trans>
             </h1>
             <p>
-              <Trans>
-                Originally started on Solana, we went all around the world to onboard the next
-                million users 1 blunt at a time. We have sold nothing. We were too high to
-                coordinate. Core team struggled with sobriety and then spurts of passion. We were so
-                IRL. You must be validated in person by another validator. We were only allowing
-                blunts. We vowed to do 420 on every chain. We did Solana. We did NEAR. At Breakpoint
-                we launched SpliffDAO, allowing spliffs due to the scarcity of Blunts and us coming
-                out of the hood and understanding the power of localization. We did Eth a year ago
-                and allowed any smoke stick. Recently we built an abstracted process using telegram.
-                Still friction. We got a SQDS, AstroDAO, and Snapshot, but without direct incentives
-                and a treasury governance is hard, especially when everybody is high.
+              <Trans>Over 2 years ago, we started started on Solana, with a  simple mission, lets give a NFT to everyone we smoke with IRL and call it Proof of Sesh. We did it for free and went on multiple world tours out of pocket. We smoked thousands of people out with our OG validators, creating more OG validators. We expanded to more than just Blunts, and became SpliffDAO and JointsDAO, and even expanded to other chains. We built account abstracted mechanisms, met the dopest people in Web3, and built community. Although we lived up to the job of making sure Blunts got smoked, the problem is, coordinating a bunch of stoners globally with no incentives and having them do on-chain actions at events is hard, especially when everyone is high. This is why in year 3, we are on the path to scale: unlimited sesh. A replenishing treasury for holders to vote on global requests for sesh.
               </Trans>
             </p>
           </div>
@@ -66,15 +57,11 @@ const NounsIntroSection = () => {
             </h1>
             <h3>
               <Trans>
-                Our mission is to onboard the next million users to Web3 1 blunt a a time.
+                We make sure blunts get smoked. 
               </Trans>
             </h3>
             <p>
-              <Trans>
-                But ultimately trying to get people to do on-chain stuff while they’re high,
-                although it forces us to create innovative onboarding mechanisms, shouldnt be the
-                point. Or joint? The “joint” should be to use proof of sesh, to raise awareness, and
-                drive incentivies for expanding the sesh..
+              <Trans>Ask yourself? What does a Blunt want you to do to it? --- Smoke it. And in this essence this is what BluntDAO is living up to . The mission to make sure blunts get smoked. And we use blockchain for stuff.
               </Trans>
             </p>
           </div>

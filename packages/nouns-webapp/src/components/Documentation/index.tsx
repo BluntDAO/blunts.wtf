@@ -40,39 +40,42 @@ const AccordionFormat = () => {
               <Trans>Tried to solve onboarding.</Trans>
             </li>
           </ul>
+          <p>
+            <Trans>Now with blunts.wtf, the unlimited sesh fund, all this is about to change.</Trans>
+          </p>
         </Accordion.Body>
       </Accordion.Item>
 
       <Accordion.Item eventKey="1" className={classes.accordionItem}>
         <Accordion.Header className={classes.accordionHeader}>
-          <Trans>Objectives</Trans>
+          <Trans>how 2 explain 2 grandma</Trans>
         </Accordion.Header>
         <Accordion.Body>
           <ul>
-            <li>
-              <Trans>
-                Create a self sustaining treasury for unlimited joints, blunts, other stick based
-                items based on NFT ownership
-              </Trans>
+          <li>
+              <Trans>"unlimited sesh fund”</Trans>
             </li>
             <li>
-              <Trans>Give incentives for people to buy and join</Trans>
+              <Trans> “The treasury for your local sesh”</Trans>
             </li>
             <li>
-              <Trans>Build brand, gain revenue with other partnerships</Trans>
+              <Trans>“Putting 5 on it, at scale”</Trans>
             </li>
             <li>
-              <Trans>Bleed into culture everyday culture</Trans>
+              <Trans>“Like PizzaDAO but blunts”</Trans>
             </li>
             <li>
-              <Trans>Create something iconic like goggles and proliferate that brand</Trans>
+              <Trans>“Blunt network state”</Trans>
+            </li>
+            <li>
+              <Trans>“Brining rotation into the commons”</Trans>
             </li>
           </ul>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2" className={classes.accordionItem}>
         <Accordion.Header className={classes.accordionHeader}>
-          <Trans>Goals</Trans>
+          <Trans>Goals by 4.20.2025</Trans>
         </Accordion.Header>
         <Accordion.Body>
           <ul>
@@ -81,9 +84,6 @@ const AccordionFormat = () => {
             </li>
             <li>
               <Trans>100 unique members</Trans>
-            </li>
-            <li>
-              <Trans>Next 4.20/2025</Trans>
             </li>
             <li>
               <Trans>Be present in every major Web3 event</Trans>
@@ -97,7 +97,7 @@ const AccordionFormat = () => {
               <Trans>Proof of Sesh with over 5000 people around the world</Trans>
             </li>{' '}
             <li>
-              <Trans>2025 be present in every major Web2 cultural event</Trans>
+              <Trans>Be present in every major Web2 cultural event</Trans>
             </li>
           </ul>
         </Accordion.Body>
@@ -152,6 +152,60 @@ const AccordionFormat = () => {
               (hoggles)
             </Trans>
           </p>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="5" className={classes.accordionItem}>
+        <Accordion.Header className={classes.accordionHeader}>
+          <Trans>When are the next auctions determined?</Trans>
+        </Accordion.Header>
+        <Accordion.Body>
+          <p>
+            <Trans>
+            Our regular auction interval is 24 hours with a minimum amount of 0.0210 ETH (half of .0420 ETH) ~ price of 1 oz of bud on the West Cost, An ounce a day keeps the doctor away
+            </Trans>
+          </p>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="6" className={classes.accordionItem}>
+        <Accordion.Header className={classes.accordionHeader}>
+          <Trans>What are the general guidelines for treasury management to make sure we still got enough for the unlimited sesh?</Trans>
+        </Accordion.Header>
+        <Accordion.Body>
+        <ul>
+            <li>
+              <Trans>45% spent on onboarding seshes</Trans>
+            </li>
+            <li>
+              <Trans>Keep 30% in treasury = runway</Trans>
+            </li>
+            <li>
+              <Trans>15% of on tech innovation</Trans>
+            </li>
+            <li>
+              <Trans>5% on art & culture</Trans>
+            </li>
+            <li>
+              <Trans>5% on operation and like coordinating stuff</Trans>
+            </li>
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="7" className={classes.accordionItem}>
+        <Accordion.Header className={classes.accordionHeader}>
+          <Trans>What are the general guidelines for the type of sesh to sponsor?</Trans>
+        </Accordion.Header>
+        <Accordion.Body>
+        <ul>
+            <li>
+              <Trans>5 people for onboarding</Trans>
+            </li>
+            <li>
+              <Trans>Attempt at getting local plug onboard</Trans>
+            </li>
+            <li>
+              <Trans>Verified on chain proof of sesh if sponsored</Trans>
+            </li>
+          </ul>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
