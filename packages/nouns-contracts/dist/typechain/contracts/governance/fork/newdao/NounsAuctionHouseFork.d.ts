@@ -1,0 +1,531 @@
+import type { BaseContract, BigNumber, BigNumberish, BytesLike, CallOverrides, ContractTransaction, Overrides, PayableOverrides, PopulatedTransaction, Signer, utils } from "ethers";
+import type { FunctionFragment, Result, EventFragment } from "@ethersproject/abi";
+import type { Listener, Provider } from "@ethersproject/providers";
+import type { TypedEventFilter, TypedEvent, TypedListener, OnEvent } from "../../../../common";
+export interface NounsAuctionHouseForkInterface extends utils.Interface {
+    functions: {
+        "NAME()": FunctionFragment;
+        "auction()": FunctionFragment;
+        "createBid(uint256)": FunctionFragment;
+        "duration()": FunctionFragment;
+        "initialize(address,address,address,uint256,uint256,uint8,uint256)": FunctionFragment;
+        "minBidIncrementPercentage()": FunctionFragment;
+        "nouns()": FunctionFragment;
+        "owner()": FunctionFragment;
+        "pause()": FunctionFragment;
+        "paused()": FunctionFragment;
+        "renounceOwnership()": FunctionFragment;
+        "reservePrice()": FunctionFragment;
+        "setMinBidIncrementPercentage(uint8)": FunctionFragment;
+        "setReservePrice(uint256)": FunctionFragment;
+        "setTimeBuffer(uint256)": FunctionFragment;
+        "settleAuction()": FunctionFragment;
+        "settleCurrentAndCreateNewAuction()": FunctionFragment;
+        "timeBuffer()": FunctionFragment;
+        "transferOwnership(address)": FunctionFragment;
+        "unpause()": FunctionFragment;
+        "upgradeTo(address)": FunctionFragment;
+        "upgradeToAndCall(address,bytes)": FunctionFragment;
+        "weth()": FunctionFragment;
+    };
+    getFunction(nameOrSignatureOrTopic: "NAME" | "auction" | "createBid" | "duration" | "initialize" | "minBidIncrementPercentage" | "nouns" | "owner" | "pause" | "paused" | "renounceOwnership" | "reservePrice" | "setMinBidIncrementPercentage" | "setReservePrice" | "setTimeBuffer" | "settleAuction" | "settleCurrentAndCreateNewAuction" | "timeBuffer" | "transferOwnership" | "unpause" | "upgradeTo" | "upgradeToAndCall" | "weth"): FunctionFragment;
+    encodeFunctionData(functionFragment: "NAME", values?: undefined): string;
+    encodeFunctionData(functionFragment: "auction", values?: undefined): string;
+    encodeFunctionData(functionFragment: "createBid", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "duration", values?: undefined): string;
+    encodeFunctionData(functionFragment: "initialize", values: [
+        string,
+        string,
+        string,
+        BigNumberish,
+        BigNumberish,
+        BigNumberish,
+        BigNumberish
+    ]): string;
+    encodeFunctionData(functionFragment: "minBidIncrementPercentage", values?: undefined): string;
+    encodeFunctionData(functionFragment: "nouns", values?: undefined): string;
+    encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+    encodeFunctionData(functionFragment: "pause", values?: undefined): string;
+    encodeFunctionData(functionFragment: "paused", values?: undefined): string;
+    encodeFunctionData(functionFragment: "renounceOwnership", values?: undefined): string;
+    encodeFunctionData(functionFragment: "reservePrice", values?: undefined): string;
+    encodeFunctionData(functionFragment: "setMinBidIncrementPercentage", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "setReservePrice", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "setTimeBuffer", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "settleAuction", values?: undefined): string;
+    encodeFunctionData(functionFragment: "settleCurrentAndCreateNewAuction", values?: undefined): string;
+    encodeFunctionData(functionFragment: "timeBuffer", values?: undefined): string;
+    encodeFunctionData(functionFragment: "transferOwnership", values: [string]): string;
+    encodeFunctionData(functionFragment: "unpause", values?: undefined): string;
+    encodeFunctionData(functionFragment: "upgradeTo", values: [string]): string;
+    encodeFunctionData(functionFragment: "upgradeToAndCall", values: [string, BytesLike]): string;
+    encodeFunctionData(functionFragment: "weth", values?: undefined): string;
+    decodeFunctionResult(functionFragment: "NAME", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "auction", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "createBid", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "duration", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "minBidIncrementPercentage", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "nouns", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "pause", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "paused", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "renounceOwnership", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "reservePrice", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setMinBidIncrementPercentage", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setReservePrice", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setTimeBuffer", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "settleAuction", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "settleCurrentAndCreateNewAuction", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "timeBuffer", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "transferOwnership", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "unpause", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "upgradeTo", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "upgradeToAndCall", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "weth", data: BytesLike): Result;
+    events: {
+        "AdminChanged(address,address)": EventFragment;
+        "AuctionBid(uint256,address,uint256,bool)": EventFragment;
+        "AuctionCreated(uint256,uint256,uint256)": EventFragment;
+        "AuctionExtended(uint256,uint256)": EventFragment;
+        "AuctionMinBidIncrementPercentageUpdated(uint256)": EventFragment;
+        "AuctionReservePriceUpdated(uint256)": EventFragment;
+        "AuctionSettled(uint256,address,uint256)": EventFragment;
+        "AuctionTimeBufferUpdated(uint256)": EventFragment;
+        "BeaconUpgraded(address)": EventFragment;
+        "OwnershipTransferred(address,address)": EventFragment;
+        "Paused(address)": EventFragment;
+        "Unpaused(address)": EventFragment;
+        "Upgraded(address)": EventFragment;
+    };
+    getEvent(nameOrSignatureOrTopic: "AdminChanged"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionBid"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionCreated"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionExtended"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionMinBidIncrementPercentageUpdated"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionReservePriceUpdated"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionSettled"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "AuctionTimeBufferUpdated"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "BeaconUpgraded"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "Paused"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "Unpaused"): EventFragment;
+    getEvent(nameOrSignatureOrTopic: "Upgraded"): EventFragment;
+}
+export interface AdminChangedEventObject {
+    previousAdmin: string;
+    newAdmin: string;
+}
+export declare type AdminChangedEvent = TypedEvent<[
+    string,
+    string
+], AdminChangedEventObject>;
+export declare type AdminChangedEventFilter = TypedEventFilter<AdminChangedEvent>;
+export interface AuctionBidEventObject {
+    nounId: BigNumber;
+    sender: string;
+    value: BigNumber;
+    extended: boolean;
+}
+export declare type AuctionBidEvent = TypedEvent<[
+    BigNumber,
+    string,
+    BigNumber,
+    boolean
+], AuctionBidEventObject>;
+export declare type AuctionBidEventFilter = TypedEventFilter<AuctionBidEvent>;
+export interface AuctionCreatedEventObject {
+    nounId: BigNumber;
+    startTime: BigNumber;
+    endTime: BigNumber;
+}
+export declare type AuctionCreatedEvent = TypedEvent<[
+    BigNumber,
+    BigNumber,
+    BigNumber
+], AuctionCreatedEventObject>;
+export declare type AuctionCreatedEventFilter = TypedEventFilter<AuctionCreatedEvent>;
+export interface AuctionExtendedEventObject {
+    nounId: BigNumber;
+    endTime: BigNumber;
+}
+export declare type AuctionExtendedEvent = TypedEvent<[
+    BigNumber,
+    BigNumber
+], AuctionExtendedEventObject>;
+export declare type AuctionExtendedEventFilter = TypedEventFilter<AuctionExtendedEvent>;
+export interface AuctionMinBidIncrementPercentageUpdatedEventObject {
+    minBidIncrementPercentage: BigNumber;
+}
+export declare type AuctionMinBidIncrementPercentageUpdatedEvent = TypedEvent<[
+    BigNumber
+], AuctionMinBidIncrementPercentageUpdatedEventObject>;
+export declare type AuctionMinBidIncrementPercentageUpdatedEventFilter = TypedEventFilter<AuctionMinBidIncrementPercentageUpdatedEvent>;
+export interface AuctionReservePriceUpdatedEventObject {
+    reservePrice: BigNumber;
+}
+export declare type AuctionReservePriceUpdatedEvent = TypedEvent<[
+    BigNumber
+], AuctionReservePriceUpdatedEventObject>;
+export declare type AuctionReservePriceUpdatedEventFilter = TypedEventFilter<AuctionReservePriceUpdatedEvent>;
+export interface AuctionSettledEventObject {
+    nounId: BigNumber;
+    winner: string;
+    amount: BigNumber;
+}
+export declare type AuctionSettledEvent = TypedEvent<[
+    BigNumber,
+    string,
+    BigNumber
+], AuctionSettledEventObject>;
+export declare type AuctionSettledEventFilter = TypedEventFilter<AuctionSettledEvent>;
+export interface AuctionTimeBufferUpdatedEventObject {
+    timeBuffer: BigNumber;
+}
+export declare type AuctionTimeBufferUpdatedEvent = TypedEvent<[
+    BigNumber
+], AuctionTimeBufferUpdatedEventObject>;
+export declare type AuctionTimeBufferUpdatedEventFilter = TypedEventFilter<AuctionTimeBufferUpdatedEvent>;
+export interface BeaconUpgradedEventObject {
+    beacon: string;
+}
+export declare type BeaconUpgradedEvent = TypedEvent<[
+    string
+], BeaconUpgradedEventObject>;
+export declare type BeaconUpgradedEventFilter = TypedEventFilter<BeaconUpgradedEvent>;
+export interface OwnershipTransferredEventObject {
+    previousOwner: string;
+    newOwner: string;
+}
+export declare type OwnershipTransferredEvent = TypedEvent<[
+    string,
+    string
+], OwnershipTransferredEventObject>;
+export declare type OwnershipTransferredEventFilter = TypedEventFilter<OwnershipTransferredEvent>;
+export interface PausedEventObject {
+    account: string;
+}
+export declare type PausedEvent = TypedEvent<[string], PausedEventObject>;
+export declare type PausedEventFilter = TypedEventFilter<PausedEvent>;
+export interface UnpausedEventObject {
+    account: string;
+}
+export declare type UnpausedEvent = TypedEvent<[string], UnpausedEventObject>;
+export declare type UnpausedEventFilter = TypedEventFilter<UnpausedEvent>;
+export interface UpgradedEventObject {
+    implementation: string;
+}
+export declare type UpgradedEvent = TypedEvent<[string], UpgradedEventObject>;
+export declare type UpgradedEventFilter = TypedEventFilter<UpgradedEvent>;
+export interface NounsAuctionHouseFork extends BaseContract {
+    connect(signerOrProvider: Signer | Provider | string): this;
+    attach(addressOrName: string): this;
+    deployed(): Promise<this>;
+    interface: NounsAuctionHouseForkInterface;
+    queryFilter<TEvent extends TypedEvent>(event: TypedEventFilter<TEvent>, fromBlockOrBlockhash?: string | number | undefined, toBlock?: string | number | undefined): Promise<Array<TEvent>>;
+    listeners<TEvent extends TypedEvent>(eventFilter?: TypedEventFilter<TEvent>): Array<TypedListener<TEvent>>;
+    listeners(eventName?: string): Array<Listener>;
+    removeAllListeners<TEvent extends TypedEvent>(eventFilter: TypedEventFilter<TEvent>): this;
+    removeAllListeners(eventName?: string): this;
+    off: OnEvent<this>;
+    on: OnEvent<this>;
+    once: OnEvent<this>;
+    removeListener: OnEvent<this>;
+    functions: {
+        NAME(overrides?: CallOverrides): Promise<[string]>;
+        auction(overrides?: CallOverrides): Promise<[
+            BigNumber,
+            BigNumber,
+            BigNumber,
+            BigNumber,
+            string,
+            boolean
+        ] & {
+            nounId: BigNumber;
+            amount: BigNumber;
+            startTime: BigNumber;
+            endTime: BigNumber;
+            bidder: string;
+            settled: boolean;
+        }>;
+        createBid(nounId: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        duration(overrides?: CallOverrides): Promise<[BigNumber]>;
+        initialize(_owner: string, _nouns: string, _weth: string, _timeBuffer: BigNumberish, _reservePrice: BigNumberish, _minBidIncrementPercentage: BigNumberish, _duration: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        minBidIncrementPercentage(overrides?: CallOverrides): Promise<[number]>;
+        nouns(overrides?: CallOverrides): Promise<[string]>;
+        owner(overrides?: CallOverrides): Promise<[string]>;
+        pause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        paused(overrides?: CallOverrides): Promise<[boolean]>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        reservePrice(overrides?: CallOverrides): Promise<[BigNumber]>;
+        setMinBidIncrementPercentage(_minBidIncrementPercentage: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        setReservePrice(_reservePrice: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        setTimeBuffer(_timeBuffer: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        settleAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        settleCurrentAndCreateNewAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        timeBuffer(overrides?: CallOverrides): Promise<[BigNumber]>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        unpause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        upgradeTo(newImplementation: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        upgradeToAndCall(newImplementation: string, data: BytesLike, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<ContractTransaction>;
+        weth(overrides?: CallOverrides): Promise<[string]>;
+    };
+    NAME(overrides?: CallOverrides): Promise<string>;
+    auction(overrides?: CallOverrides): Promise<[
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        string,
+        boolean
+    ] & {
+        nounId: BigNumber;
+        amount: BigNumber;
+        startTime: BigNumber;
+        endTime: BigNumber;
+        bidder: string;
+        settled: boolean;
+    }>;
+    createBid(nounId: BigNumberish, overrides?: PayableOverrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    duration(overrides?: CallOverrides): Promise<BigNumber>;
+    initialize(_owner: string, _nouns: string, _weth: string, _timeBuffer: BigNumberish, _reservePrice: BigNumberish, _minBidIncrementPercentage: BigNumberish, _duration: BigNumberish, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    minBidIncrementPercentage(overrides?: CallOverrides): Promise<number>;
+    nouns(overrides?: CallOverrides): Promise<string>;
+    owner(overrides?: CallOverrides): Promise<string>;
+    pause(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    paused(overrides?: CallOverrides): Promise<boolean>;
+    renounceOwnership(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    reservePrice(overrides?: CallOverrides): Promise<BigNumber>;
+    setMinBidIncrementPercentage(_minBidIncrementPercentage: BigNumberish, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    setReservePrice(_reservePrice: BigNumberish, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    setTimeBuffer(_timeBuffer: BigNumberish, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    settleAuction(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    settleCurrentAndCreateNewAuction(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    timeBuffer(overrides?: CallOverrides): Promise<BigNumber>;
+    transferOwnership(newOwner: string, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    unpause(overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    upgradeTo(newImplementation: string, overrides?: Overrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    upgradeToAndCall(newImplementation: string, data: BytesLike, overrides?: PayableOverrides & {
+        from?: string | Promise<string>;
+    }): Promise<ContractTransaction>;
+    weth(overrides?: CallOverrides): Promise<string>;
+    callStatic: {
+        NAME(overrides?: CallOverrides): Promise<string>;
+        auction(overrides?: CallOverrides): Promise<[
+            BigNumber,
+            BigNumber,
+            BigNumber,
+            BigNumber,
+            string,
+            boolean
+        ] & {
+            nounId: BigNumber;
+            amount: BigNumber;
+            startTime: BigNumber;
+            endTime: BigNumber;
+            bidder: string;
+            settled: boolean;
+        }>;
+        createBid(nounId: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        duration(overrides?: CallOverrides): Promise<BigNumber>;
+        initialize(_owner: string, _nouns: string, _weth: string, _timeBuffer: BigNumberish, _reservePrice: BigNumberish, _minBidIncrementPercentage: BigNumberish, _duration: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        minBidIncrementPercentage(overrides?: CallOverrides): Promise<number>;
+        nouns(overrides?: CallOverrides): Promise<string>;
+        owner(overrides?: CallOverrides): Promise<string>;
+        pause(overrides?: CallOverrides): Promise<void>;
+        paused(overrides?: CallOverrides): Promise<boolean>;
+        renounceOwnership(overrides?: CallOverrides): Promise<void>;
+        reservePrice(overrides?: CallOverrides): Promise<BigNumber>;
+        setMinBidIncrementPercentage(_minBidIncrementPercentage: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        setReservePrice(_reservePrice: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        setTimeBuffer(_timeBuffer: BigNumberish, overrides?: CallOverrides): Promise<void>;
+        settleAuction(overrides?: CallOverrides): Promise<void>;
+        settleCurrentAndCreateNewAuction(overrides?: CallOverrides): Promise<void>;
+        timeBuffer(overrides?: CallOverrides): Promise<BigNumber>;
+        transferOwnership(newOwner: string, overrides?: CallOverrides): Promise<void>;
+        unpause(overrides?: CallOverrides): Promise<void>;
+        upgradeTo(newImplementation: string, overrides?: CallOverrides): Promise<void>;
+        upgradeToAndCall(newImplementation: string, data: BytesLike, overrides?: CallOverrides): Promise<void>;
+        weth(overrides?: CallOverrides): Promise<string>;
+    };
+    filters: {
+        "AdminChanged(address,address)"(previousAdmin?: null, newAdmin?: null): AdminChangedEventFilter;
+        AdminChanged(previousAdmin?: null, newAdmin?: null): AdminChangedEventFilter;
+        "AuctionBid(uint256,address,uint256,bool)"(nounId?: BigNumberish | null, sender?: null, value?: null, extended?: null): AuctionBidEventFilter;
+        AuctionBid(nounId?: BigNumberish | null, sender?: null, value?: null, extended?: null): AuctionBidEventFilter;
+        "AuctionCreated(uint256,uint256,uint256)"(nounId?: BigNumberish | null, startTime?: null, endTime?: null): AuctionCreatedEventFilter;
+        AuctionCreated(nounId?: BigNumberish | null, startTime?: null, endTime?: null): AuctionCreatedEventFilter;
+        "AuctionExtended(uint256,uint256)"(nounId?: BigNumberish | null, endTime?: null): AuctionExtendedEventFilter;
+        AuctionExtended(nounId?: BigNumberish | null, endTime?: null): AuctionExtendedEventFilter;
+        "AuctionMinBidIncrementPercentageUpdated(uint256)"(minBidIncrementPercentage?: null): AuctionMinBidIncrementPercentageUpdatedEventFilter;
+        AuctionMinBidIncrementPercentageUpdated(minBidIncrementPercentage?: null): AuctionMinBidIncrementPercentageUpdatedEventFilter;
+        "AuctionReservePriceUpdated(uint256)"(reservePrice?: null): AuctionReservePriceUpdatedEventFilter;
+        AuctionReservePriceUpdated(reservePrice?: null): AuctionReservePriceUpdatedEventFilter;
+        "AuctionSettled(uint256,address,uint256)"(nounId?: BigNumberish | null, winner?: null, amount?: null): AuctionSettledEventFilter;
+        AuctionSettled(nounId?: BigNumberish | null, winner?: null, amount?: null): AuctionSettledEventFilter;
+        "AuctionTimeBufferUpdated(uint256)"(timeBuffer?: null): AuctionTimeBufferUpdatedEventFilter;
+        AuctionTimeBufferUpdated(timeBuffer?: null): AuctionTimeBufferUpdatedEventFilter;
+        "BeaconUpgraded(address)"(beacon?: string | null): BeaconUpgradedEventFilter;
+        BeaconUpgraded(beacon?: string | null): BeaconUpgradedEventFilter;
+        "OwnershipTransferred(address,address)"(previousOwner?: string | null, newOwner?: string | null): OwnershipTransferredEventFilter;
+        OwnershipTransferred(previousOwner?: string | null, newOwner?: string | null): OwnershipTransferredEventFilter;
+        "Paused(address)"(account?: null): PausedEventFilter;
+        Paused(account?: null): PausedEventFilter;
+        "Unpaused(address)"(account?: null): UnpausedEventFilter;
+        Unpaused(account?: null): UnpausedEventFilter;
+        "Upgraded(address)"(implementation?: string | null): UpgradedEventFilter;
+        Upgraded(implementation?: string | null): UpgradedEventFilter;
+    };
+    estimateGas: {
+        NAME(overrides?: CallOverrides): Promise<BigNumber>;
+        auction(overrides?: CallOverrides): Promise<BigNumber>;
+        createBid(nounId: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        duration(overrides?: CallOverrides): Promise<BigNumber>;
+        initialize(_owner: string, _nouns: string, _weth: string, _timeBuffer: BigNumberish, _reservePrice: BigNumberish, _minBidIncrementPercentage: BigNumberish, _duration: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        minBidIncrementPercentage(overrides?: CallOverrides): Promise<BigNumber>;
+        nouns(overrides?: CallOverrides): Promise<BigNumber>;
+        owner(overrides?: CallOverrides): Promise<BigNumber>;
+        pause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        paused(overrides?: CallOverrides): Promise<BigNumber>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        reservePrice(overrides?: CallOverrides): Promise<BigNumber>;
+        setMinBidIncrementPercentage(_minBidIncrementPercentage: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        setReservePrice(_reservePrice: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        setTimeBuffer(_timeBuffer: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        settleAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        settleCurrentAndCreateNewAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        timeBuffer(overrides?: CallOverrides): Promise<BigNumber>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        unpause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        upgradeTo(newImplementation: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        upgradeToAndCall(newImplementation: string, data: BytesLike, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<BigNumber>;
+        weth(overrides?: CallOverrides): Promise<BigNumber>;
+    };
+    populateTransaction: {
+        NAME(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        auction(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        createBid(nounId: BigNumberish, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        duration(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        initialize(_owner: string, _nouns: string, _weth: string, _timeBuffer: BigNumberish, _reservePrice: BigNumberish, _minBidIncrementPercentage: BigNumberish, _duration: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        minBidIncrementPercentage(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        nouns(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        pause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        paused(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        renounceOwnership(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        reservePrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        setMinBidIncrementPercentage(_minBidIncrementPercentage: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        setReservePrice(_reservePrice: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        setTimeBuffer(_timeBuffer: BigNumberish, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        settleAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        settleCurrentAndCreateNewAuction(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        timeBuffer(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+        transferOwnership(newOwner: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        unpause(overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        upgradeTo(newImplementation: string, overrides?: Overrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        upgradeToAndCall(newImplementation: string, data: BytesLike, overrides?: PayableOverrides & {
+            from?: string | Promise<string>;
+        }): Promise<PopulatedTransaction>;
+        weth(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    };
+}
