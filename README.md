@@ -1,6 +1,7 @@
-# nouns-monorepo
-
-Nouns DAO is a generative avatar art collective run by a group of crypto misfits.
+# blunts-monorepo
+Docs https://docs.bluntdao.org
+Website https://blunts.wtf
+Forked of https://nouns.wtf
 
 ## Packages
 
