@@ -7,7 +7,6 @@ import { LoadingNoun } from '../Noun';
 import { Auction as IAuction } from '../../wrappers/nounsAuction';
 import classes from './Auction.module.css';
 import { INounSeed } from '../../wrappers/nounToken';
-import Countdown from 'react-countdown';
 // import NounderNounContent from '../NounderNounContent';
 // import { useHistory } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -21,6 +20,8 @@ import homeBg from '../../assets/Homebg.jpg';
 import Image from 'react-bootstrap/Image';
 import heroImage from '../../assets/bluntsLogo.png';
 import { Trans } from '@lingui/macro';
+import Countdown from 'react-countdown';
+import { AnyARecord } from 'dns';
 
 interface AuctionProps {
   auction?: IAuction;
@@ -83,14 +84,14 @@ const Auction: React.FC<AuctionProps> = props => {
   //     onNextAuctionClick={nextAuctionHandler}
   //   />
   // );
-  const Completionist = () => <span>Mint!</span>;
+  const Completionist = () => <h1>Ready to mint!</h1>;
   const renderer = ({ hours, minutes, seconds, completed }: any) => {
     if (completed) {
       // Render a completed state
       return <Completionist />;
     } else {
       // Render a countdown
-      return <span>{hours}:{minutes}:{seconds}</span>;
+      return <h1>{hours}:{minutes}:{seconds}</h1>
     }
   };
   return (
@@ -119,11 +120,18 @@ const Auction: React.FC<AuctionProps> = props => {
               <Trans>Join the waitlist</Trans>
             </h1>
           </div>
-          <Countdown
-            date={Date.now() + 5000}
-            renderer={renderer}
-          />
         </a>
+      </div>
+      <div className={classes.topHero}>
+        <div className={classes.soon}>
+          <h1>
+            <Countdown
+              date={1713644400000}
+              renderer={renderer}
+            />
+          </h1>
+
+        </div>
       </div>
     </div>
   );
