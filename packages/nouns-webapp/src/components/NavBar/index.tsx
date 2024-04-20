@@ -13,6 +13,7 @@ import NavBarButton, { NavBarButtonStyle } from '../NavBarButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faCodeFork, faFile, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import NavBarTreasury from '../NavBarTreasury';
@@ -51,8 +52,8 @@ const NavBar = () => {
   const nonWalletButtonStyle = !useStateBg
     ? NavBarButtonStyle.WHITE_INFO
     : isCool
-    ? NavBarButtonStyle.COOL_INFO
-    : NavBarButtonStyle.WARM_INFO;
+      ? NavBarButtonStyle.COOL_INFO
+      : NavBarButtonStyle.WARM_INFO;
 
   const closeNav = () => setIsNavExpanded(false);
   const buttonClasses = usePickByState(
@@ -102,12 +103,12 @@ const NavBar = () => {
         expand="xl"
         style={{ backgroundColor: `${useStateBg ? stateBgColor : 'white'}` }}
         className={classes.navBarCustom}
-        // expanded={isNavExpanded}
+      // expanded={isNavExpanded}
       >
         <Container style={{ maxWidth: 'unset' }}>
           <div className={classes.brandAndTreasuryWrapper}>
             <Navbar.Brand as={Link} to="/" className={classes.navBarBrand}>
-              <Image src={foggles} className={classes.navBarLogo} alt="BluntDao" />
+              <Image src={foggles} className={classes.navBarLogo} alt="Blunt DAO foggles" />
             </Navbar.Brand>
             {/* {Number(CHAIN_ID) !== 1 && (
               <Nav.Item>
@@ -148,6 +149,19 @@ const NavBar = () => {
                 <NavBarButton
                   buttonText={<Trans>DAO</Trans>}
                   buttonIcon={<FontAwesomeIcon icon={faUsers} />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
+              <Nav.Link
+                href={`https://forum.bluntdao.org/`}
+                className={classes.nounsNavLink}
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText={<Trans>FORUM</Trans>}
+                  buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
                   buttonStyle={nonWalletButtonStyle}
                 />
               </Nav.Link>
@@ -201,21 +215,49 @@ const NavBar = () => {
               {isDaoGteV3 ? (
                 v3DaoNavItem
               ) : (
-                <Nav.Link
-                  href={`https://nouns.build/`}
-                  className={classes.nounsNavLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={closeNav}
-                >
-                  <NavBarButton
-                    buttonText={<Trans>DAO</Trans>}
-                    buttonIcon={<FontAwesomeIcon icon={faUsers} />}
-                    buttonStyle={nonWalletButtonStyle}
-                  />
-                </Nav.Link>
+                <>
+                  <Nav.Link
+                    href={`https://nouns.build/`}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={closeNav}
+                  >
+                    <NavBarButton
+                      buttonText={<Trans>DAO</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faUsers} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
+                  </Nav.Link>
+
+                </>
+
               )}
             </div>
+            <div className={clsx(responsiveUiUtilsClasses.desktopOnly)}>
+              {isDaoGteV3 ? (
+                v3DaoNavItem
+              ) : (
+                <>
+                  <Nav.Link
+                    href={`https://forum.bluntdao.org/`}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={closeNav}
+                  >
+                    <NavBarButton
+                      buttonText={<Trans>FORUM</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faCircleInfo} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
+                  </Nav.Link>
+
+                </>
+
+              )}
+            </div>
+
             <Nav.Link
               href={externalURL(ExternalURL.nounsCenter)}
               className={classes.nounsNavLink}
