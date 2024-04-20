@@ -1,0 +1,22 @@
+export declare const config: {
+    redisPort: number;
+    redisHost: string;
+    redisDb: number;
+    redisPassword: string | undefined;
+    nounsSubgraph: string;
+    twitterEnabled: boolean;
+    twitterAppKey: string;
+    twitterAppSecret: string;
+    twitterAccessToken: string;
+    twitterAccessSecret: string;
+    nounsTokenAddress: string;
+    jsonRpcUrl: string;
+    discordEnabled: boolean;
+    discordWebhookToken: string;
+    discordWebhookId: string;
+    discordPublicWebhookToken: string;
+    discordPublicWebhookId: string;
+    pinataEnabled: boolean;
+    pinataApiKey: string;
+    pinataApiSecretKey: string;
+};
